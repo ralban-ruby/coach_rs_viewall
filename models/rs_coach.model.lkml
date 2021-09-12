@@ -1,5 +1,7 @@
 connection: "elt_connector"
 
+#testing for rs coach view all dash
+
 include: "*.view"
 
 explore: acw_call {
