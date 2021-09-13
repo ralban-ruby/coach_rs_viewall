@@ -37,4 +37,9 @@ view: agentactivitylog {
     type: count
     drill_fields: [legalname, name]
   }
+
+  measure: minutes_sum {
+    type: sum
+    sql:  ${TABLE}."MINUTES"/1 ;;
+  }
 }
