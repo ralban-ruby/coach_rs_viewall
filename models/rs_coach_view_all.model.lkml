@@ -1,6 +1,6 @@
 connection: "elt_connector"
 
-#testing for rs coach view all dashh
+#testing for rs coach view all dash
 
 include: "*.view"
 include: "/**/*.dashboard"
