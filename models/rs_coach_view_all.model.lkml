@@ -13,6 +13,16 @@ explore: acw_call {
     sql_on: ${acw_call.employeeid} = ${primarylink.employeeid};;
   }
 }
+
+explore: agentactivitylog {
+  hidden: no
+  join:  primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${agentactivitylog.employeeid} = ${primarylink.employeeid};;
+  }
+}
+
 explore: avail {
   hidden: no
   join:  primarylink {
