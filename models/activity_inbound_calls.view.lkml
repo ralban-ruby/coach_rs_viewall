@@ -1,4 +1,4 @@
-view: inbound_calls {
+view: activity_inbound_calls {
   sql_table_name: "ACTIVITIES"."INBOUND_CALLS"
     ;;
 

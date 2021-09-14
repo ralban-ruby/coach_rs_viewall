@@ -23,6 +23,19 @@ explore: agentactivitylog {
   }
 }
 
+explore: activity_inbound_calls {
+  join: activity_inbound_call_detail {
+    relationship: one_to_many
+    type: left_outer
+    sql_on:  UPPER(${activity_inbound_calls.ruby_call_id}) = ${activity_inbound_call_detail.ruby_call_id};;
+  }
+  join: primarylink {
+    relationship: many_to_one
+    type: left_outer
+    sql_on:  ${activity_inbound_calls.receptionist_name} = ${primarylink.name};;
+  }
+}
+
 explore: avail {
   hidden: no
   join:  primarylink {

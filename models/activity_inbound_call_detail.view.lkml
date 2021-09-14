@@ -1,4 +1,4 @@
-view: call_detail {
+view: activity_inbound_call_detail {
   sql_table_name: "ACTIVITIES"."CALL_DETAIL"
     ;;
 dimension: inbound_call_detail_id {
