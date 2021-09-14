@@ -34,6 +34,11 @@ explore: activity_inbound_calls {
     type: left_outer
     sql_on:  ${activity_inbound_calls.receptionist_name} = ${primarylink.name};;
   }
+  join:acw_call {
+    relationship: many_to_one
+    type: left_outer
+    sql_on:  ${acw_call.employeeid} = ${primarylink.employeeid};;
+  }
 }
 
 explore: avail {
