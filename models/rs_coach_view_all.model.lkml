@@ -34,10 +34,10 @@ explore: activity_inbound_calls {
     type: left_outer
     sql_on:  ${activity_inbound_calls.receptionist_name} = ${primarylink.name};;
   }
-  join:acw_call {
+  join:acw_tda {
     relationship: many_to_one
     type: left_outer
-    sql_on:  ${acw_call.employeeid} = ${primarylink.employeeid};;
+    sql_on:  ${acw_tda.employeeid} = ${primarylink.employeeid};;
   }
 }
 
@@ -66,6 +66,16 @@ explore: brb {
     sql_on: ${brb.employeeid} = ${primarylink.employeeid};;
   }
 }
+
+explore: brb_tda {
+  hidden: no
+  join:  primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${brb_tda.employeeid} = ${primarylink.employeeid};;
+  }
+}
+
 explore: connections {
   hidden: no
   join:  primarylink {
