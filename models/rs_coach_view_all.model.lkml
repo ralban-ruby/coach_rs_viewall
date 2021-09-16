@@ -3,7 +3,7 @@ connection: "elt_connector"
 #testing for rs coach view all dash
 
 include: "*.view"
-include: "/**/*.dashboard"
+#include: "/**/*.dashboard"
 
 explore: acw_call {
   hidden: no
