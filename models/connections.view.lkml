@@ -14,7 +14,7 @@ view: connections {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}."DATECREATED;;
+    sql: ${TABLE}."DATECREATED";;
     html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
