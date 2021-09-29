@@ -20,6 +20,7 @@ view: errors {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."CREATED_DATE" ;;
+    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
   dimension_group: date_error_occurred_c {
@@ -35,6 +36,7 @@ view: errors {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."DATE_ERROR_OCCURRED_C" ;;
+    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
   dimension: employeeid {

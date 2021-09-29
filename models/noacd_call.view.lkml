@@ -24,6 +24,7 @@ view: noacd_call {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."DATE" ;;
+    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
   dimension: noacd_second {
