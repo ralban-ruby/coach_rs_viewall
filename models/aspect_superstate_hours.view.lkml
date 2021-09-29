@@ -111,6 +111,7 @@ view: aspect_superstate_hours {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."NOMINALDATE" ;;
+    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
   dimension: superstateid {
