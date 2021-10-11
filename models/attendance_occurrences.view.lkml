@@ -92,7 +92,7 @@ view: attendance_occurrences {
       quarter,
       year
     ]
-    convert_tz: no
+    convert_tz: yes
     datatype: date
     sql: ${TABLE}."EFFECTIVETHROUGH" ;;
     html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
