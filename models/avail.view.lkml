@@ -31,7 +31,8 @@ view: avail {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_week
     ]
     convert_tz: no
     datatype: date
