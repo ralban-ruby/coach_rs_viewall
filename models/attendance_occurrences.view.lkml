@@ -40,7 +40,8 @@ view: attendance_occurrences {
       quarter,
       year
     ]
-    sql: ${TABLE}."ABSENCESTART" ;;
+    convert_tz: no
+        sql: ${TABLE}."ABSENCESTART" ;;
   }
 
   dimension_group: absencestop {
@@ -54,6 +55,7 @@ view: attendance_occurrences {
       quarter,
       year
     ]
+    convert_tz: no
     sql: ${TABLE}."ABSENCESTOP" ;;
   }
 
@@ -92,9 +94,9 @@ view: attendance_occurrences {
       quarter,
       year
     ]
-    convert_tz: yes
+    convert_tz: no
     datatype: date
-    sql: ${TABLE}."EFFECTIVETHROUGH" ;;
+    sql: ${TABLE}."EFFECTIVETHROUGH_ACTUAL" ;;
     html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
