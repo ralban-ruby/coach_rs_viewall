@@ -35,7 +35,7 @@ view: primarylink {
 
   dimension: Tenure {
     type : number
-    sql: ${TABLE}."Tenure";;
+    sql: ${TABLE}."TENURE";;
   }
 
   dimension: tenure_tier {
