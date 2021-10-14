@@ -116,7 +116,7 @@ explore: ontime {
     sql_on: ${ontime.employeeid} = ${primarylink.employeeid};;
   }
 }
-explore: primarylink { hidden: yes}
+explore: primarylink { hidden:no}
 explore: talktime_call {
   hidden: no
   join:  primarylink {
