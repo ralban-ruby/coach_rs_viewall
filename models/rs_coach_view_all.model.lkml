@@ -32,7 +32,7 @@ explore: activity_inbound_calls {
   join: primarylink {
     relationship: many_to_one
     type: left_outer
-    sql_on:  ${activity_inbound_calls.receptionist_name} = ${primarylink.name};;
+    sql_on:  upper(${activity_inbound_calls.receptionist_name}) = upper(${primarylink.name});;
   }
   join:acw_tda {
     relationship: many_to_one
@@ -177,20 +177,20 @@ explore: rs_ic_status_fact {
     view_label: "Calls"
     relationship: many_to_one
     type: full_outer
-    sql_on: ${rs_ic_status_fact.name} = ${rs_recp_call_stats_fact.name}
+    sql_on: upper(${rs_ic_status_fact.name}) = upper(${rs_recp_call_stats_fact.name})
       and ${rs_ic_status_fact.day_of_shift_date} = ${rs_recp_call_stats_fact.day_of_shift_date} ;;
   }
   join: employee_lookup_all {
     view_label: "Current Employee Info"
     relationship: many_to_one
     type: full_outer
-    sql_on:  ${rs_ic_status_fact.name} = ${employee_lookup_all.name};;
+    sql_on:  upper(${rs_ic_status_fact.name}) = upper(${employee_lookup_all.name});;
   }
   join: aspect_superstate_hours {
     view_label: "Aspect Superstate Hours"
     relationship: many_to_many
     type: full_outer
-    sql_on: ${rs_ic_status_fact.name} = ${aspect_superstate_hours.name}
+    sql_on: upper(${rs_ic_status_fact.name}) = upper(${aspect_superstate_hours.name})
       and ${rs_ic_status_fact.day_of_shift_date} = ${aspect_superstate_hours.nominal_date} ;;
   }
 }
