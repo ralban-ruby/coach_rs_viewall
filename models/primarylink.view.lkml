@@ -61,6 +61,17 @@ view: primarylink {
                                 'Mercedes Alvarado','Neena Nuhring','Rachel Rhodus','Sharene Neidig','Zach Duling','Zach Kramberg');;
         label: "Beta"
       }
+      when: {
+        sql: ${TABLE}.name IN ('Jennifer Engelhart','Jessica Gonzalez','Jessica Brown', 'Kat Oconnor',
+                              'Kerry Connor','Liana Walker','Mari Dujohn','Noah Pierce','Rachel Shepard','Reshah Francois','Sue Earle',
+                              'Taylor Defraties','Teja Carlen','Tiarah Greenwood','Tracie Hill','Ana Espinoza-Rodriguez','Emma Mullins',
+                              'Holly Nelson','Jade Jackman','Jodi Hoffman','Jordan Haney','Karla Goehring','Mary Powell','Nicci Munn','Scottie Myers',
+                              'Sequaia Anderson','Sherida Price','Tra Erby','Anna Scott','Tristan Clemons','Dylan Wright',
+                              'Erika Vargas','Hannah Boger','Heather Schuman','Isabella Perdomo','Joanna Barber','Kaitlin Nelms','Kourtney Wood','Maria Balleza',
+                              'Morgan Osborne','Nia Chandler','Siobhan Gies','Stephanie Byrd','Susanne Yarmer','Tatiana Galaz','Jessaca Brown-Maruhn');;
+        label: "Beta 2"
+      }
+
     }
   }
 
