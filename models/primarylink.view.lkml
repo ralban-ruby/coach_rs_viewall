@@ -15,7 +15,8 @@ view: primarylink {
 
   dimension: name {
     type: string
-    sql: ${TABLE}."NAME" ;;
+    sql: ${TABLE}."NAME";;
+    suggest_persist_for: "0 minutes"
   }
 
   dimension: supervisor_primary {
