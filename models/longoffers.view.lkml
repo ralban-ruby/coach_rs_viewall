@@ -1,5 +1,5 @@
 view: longoffers {
-  sql_table_name: "RS"."Longoffer"
+  sql_table_name: "RS"."Longoffers"
     ;;
 
   dimension_group: date {
