@@ -102,7 +102,7 @@ explore: longoffers {
   join:  rs_recap_longoffer_ana_data {
     relationship: one_to_one
     type: full_outer
-    sql_on: ${longoffers.employeeid} = ${rs_recap_longoffer_ana_data.employeeid};;
+    sql_on: ${primarylink.employeeid} = ${rs_recap_longoffer_ana_data.employeeid};;
   }
 }
 explore: noacd_call {
