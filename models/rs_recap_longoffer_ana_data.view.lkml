@@ -1,6 +1,16 @@
-view: longoffers {
-  sql_table_name: "RS"."Longoffer"
+view: rs_recap_longoffer_ana_data {
+  sql_table_name: "RS"."RS_RECAP_LONGOFFER_ANA_DATA"
     ;;
+
+  dimension: ana {
+    type: number
+    sql: ${TABLE}."ANA" ;;
+  }
+
+  dimension: calls {
+    type: number
+    sql: ${TABLE}."CALLS" ;;
+  }
 
   dimension_group: date {
     type: time
@@ -15,7 +25,6 @@ view: longoffers {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."DATE" ;;
-    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
   }
 
   dimension: employeeid {
@@ -24,24 +33,15 @@ view: longoffers {
     sql: ${TABLE}."EMPLOYEEID" ;;
   }
 
-  dimension: longoffers {
+  dimension: longoffer {
     type: number
-    sql: ${TABLE}."LONG_OFFERS" ;;
+    sql: ${TABLE}."LONGOFFER" ;;
   }
 
-  dimension: ANA {
-    type: number
-    sql: ${TABLE}."ANA" ;;
-  }
-
-  dimension: total_calls {
-    type: number
-    sql: ${TABLE}."TOTAL_CALLS" ;;
-  }
-
-  dimension: name {
+  dimension: receptionist_description {
     type: string
-    sql: ${TABLE}."NAME" ;;
+    label: "Name"
+    sql: ${TABLE}."RECEPTIONIST_DESCRIPTION" ;;
   }
 
   dimension: userid {
@@ -51,6 +51,6 @@ view: longoffers {
 
   measure: count {
     type: count
-    drill_fields: [name]
+    drill_fields: []
   }
 }
