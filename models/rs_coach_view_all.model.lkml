@@ -99,10 +99,13 @@ explore: longoffers {
     type: full_outer
     sql_on: ${longoffers.employeeid} = ${primarylink.employeeid};;
   }
-  join:  rs_recap_longoffer_ana_data {
+}
+explore: rs_recap_longoffer_ana_data {
+  hidden: no
+  join:  primarylink {
     relationship: one_to_one
     type: full_outer
-    sql_on: ${primarylink.employeeid} = ${rs_recap_longoffer_ana_data.employeeid};;
+    sql_on: ${rs_recap_longoffer_ana_data.employeeid} = ${primarylink.employeeid};;
   }
 }
 explore: noacd_call {
