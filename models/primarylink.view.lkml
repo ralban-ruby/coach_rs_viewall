@@ -67,12 +67,27 @@ view: primarylink {
                               'Kerry Connor','Liana Walker','Mari Dujohn','Noah Pierce','Rachel Shepard','Reshah Francois','Sue Earle',
                               'Taylor Defraties','Teja Carlen','Tiarah Greenwood','Tracie Hill','Ana Espinoza-Rodriguez','Emma Mullins',
                               'Holly Nelson','Jade Jackman','Jodi Hoffman','Jordan Haney','Karla Goehring','Mary Powell','Nicci Munn','Scottie Myers',
-                              'Sequaia Anderson','Sherida Price','Tra Erby','Anna Scott','Tristan Clemons','Dylan Wright',
-                              'Erika Vargas','Hannah Boger','Heather Schuman','Isabella Perdomo','Joanna Barber','Kaitlin Nelms','Kourtney Wood','Maria Balleza',
+                              'Sequaia Anderson','Sherida Price','Tra Erby','Anna Scott','Tristan Clemons','Dylan Wright','Erika Vargas',
+                              'Hannah Boger','Heather Schuman','Isabella Perdomo','Joanna Barber','Kaitlin Nelms','Kourtney Wood','Maria Balleza',
                               'Morgan Osborne','Nia Chandler','Siobhan Gies','Stephanie Byrd','Susanne Yarmer','Tatiana Galaz','Jessaca Brown-Maruhn');;
         label: "Beta 2"
       }
-
+      when: {
+        sql: ${TABLE}.name IN ('Anthony Manietta','Erika Leibelt','Jessi Ip','Olivia Odell','Taylor Urfer','Allison Maschhoff','Ash Henrion',
+                              'Cara Coon','CC Ceballos','Charity Bryant','Jamie Travis','Janna Kipling','Jessica Morgan','Megan Thompson',
+                              'Megan Lomeli','Noemi Montero','Shay Carr','Stephanie Raasch','Traci Schafer','Addy Lindberg','Brandie Gilbert',
+                              'Carrie Askinas','Corey Christiansen','Monica Swayzer','Nicole Romero','Phoenix Rambo','Shanna Walker','Tae Joseph',
+                              'Tana Chandler','Tracey Brown','Malanya Cam','Mary Loudermilk');;
+        label: "Rollout Group 1"
+      }
+      when: {
+        sql: ${TABLE}.name IN ('Felicia Wilson','Lynn Young','Morgan Norman','Bill Cory','Julie Lewis','Leslie Tena-Diaz','Nicholl Kaput',
+                              'Sarah Page','Shelly Gray','Stephanie Laaker','Alex Phompat','Casandra Tappin','Jackie Manning','Krystyn Easley',
+                              'Lyric Montgomery','MacRista Barber-Smith','Mari Jean Arscott','Misty Harding','Natalie Albert','Shanna Henson',
+                              'Adrianna Luna','Amber Meade','Ashley Thomas','Brittney Harris','Brittney Baysinger','Connie Shieh','Jocelin Woods',
+                              'Lexi Palmer','Michael Brooks','Porche Grant','Sarah Courter','Sheika Derrell');;
+        label: "Rollout Group 2"
+      }
     }
   }
 
