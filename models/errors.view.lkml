@@ -65,6 +65,11 @@ view: errors {
     sql: ${TABLE}."ERROR_TYPE_C" ;;
   }
 
+  dimension: rac_tag {
+    type: yesno
+    sql: ${TABLE}."RAC_TAG" ;;
+  }
+
   dimension: name {
     type: string
     sql: ${TABLE}."NAME" ;;
