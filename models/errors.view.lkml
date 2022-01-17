@@ -67,6 +67,7 @@ view: errors {
 
   dimension: rac_tag {
     type: yesno
+    label: "RAC_tag"
     sql: ${TABLE}."RAC_TAG" ;;
   }
 
