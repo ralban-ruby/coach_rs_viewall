@@ -28,10 +28,14 @@ view: noacd_unavail_call {
     sql: ${TABLE}."EMPLOYEEID" ;;
   }
 
-  dimension: noacd_second_per_call{
-    label: "noacd_second_per_call"
+  dimension: noacd_second_per_call {
     type: number
-    sql: ${TABLE}."NOACD_SECOND_per_call" ;;
+    sql: ${TABLE}."NOACD_SECOND_PER_CALL" ;;
+  }
+
+  dimension: noacd_seconds {
+    type: number
+    sql: ${TABLE}."NOACD_SECONDS" ;;
   }
 
   dimension: receptionistdescription {
@@ -39,15 +43,9 @@ view: noacd_unavail_call {
     sql: ${TABLE}."RECEPTIONISTDESCRIPTION" ;;
   }
 
-  dimension: seconds {
-    label: "NoAcd_second"
+  dimension: unavail_seconds {
     type: number
-    sql: ${TABLE}."NOACD_SECONDS" ;;
-  }
-
-  dimension: unavail_second {
-    type: number
-    sql: ${TABLE}."UNAVAIL_SECOND" ;;
+    sql: ${TABLE}."UNAVAIL_SECONDS" ;;
   }
 
   measure: count {
