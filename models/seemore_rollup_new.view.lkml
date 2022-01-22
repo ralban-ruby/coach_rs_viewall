@@ -23,6 +23,11 @@ view: seemore_rollup_new {
     sql: ${TABLE}."AVAIL" ;;
   }
 
+  dimension: ACW_minutes {
+    type: number
+    sql: ${TABLE}."ACW_MINUTES" ;;
+  }
+
   dimension: brb_minutes {
     type: number
     sql: ${TABLE}."BRB_MINUTES" ;;
