@@ -5,6 +5,8 @@ connection: "elt_connector"
 include: "*.view"
 #include: "/**/*.dashboard"
 
+explore: Holdtime {}
+
 explore: acw_call {
   hidden: no
   join:  primarylink {
