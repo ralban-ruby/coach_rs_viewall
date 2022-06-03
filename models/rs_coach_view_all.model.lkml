@@ -68,6 +68,14 @@ explore: seemore_rollup_new {
     sql_on: ${seemore_rollup_new.employeeid} = ${primarylink.employeeid} ;;
   }
 }
+explore: seemore_rollup_new_all {
+  hidden: no
+  join: employee_lookup_all {
+    relationship: many_to_one
+    type: full_outer
+    sql_on: ${seemore_rollup_new_all.employeeid} = ${employee_lookup_all.employeeid} ;;
+  }
+}
 explore: brb {
   hidden: no
   join:  primarylink {

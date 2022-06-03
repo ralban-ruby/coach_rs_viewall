@@ -1,0 +1,51 @@
+view: Longoffer_updated {
+  sql_table_name: "RS"."RS_RECAP_LONGOFFER_ANA_DATA"
+    ;;
+
+  dimension: ana {
+    type: number
+    sql: ${TABLE}."ANA" ;;
+  }
+
+  dimension: calls {
+    type: number
+    sql: ${TABLE}."CALLS" ;;
+  }
+
+  dimension_group: date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."DATE" ;;
+    html: {{ rendered_value | date: "%m/%d/%Y" }} ;;
+  }
+
+  dimension: employeeid {
+    type: number
+    value_format_name: id
+    sql: ${TABLE}."EMPLOYEEID" ;;
+  }
+
+  dimension: longoffer {
+    type: number
+    sql: ${TABLE}."LONGOFFER" ;;
+  }
+
+  dimension: receptionist_description {
+    type: string
+    sql: ${TABLE}."RECEPTIONIST_DESCRIPTION" ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [receptionist_description]
+  }
+}
