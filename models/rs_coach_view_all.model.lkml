@@ -70,10 +70,10 @@ explore: seemore_rollup_new {
 }
 explore: seemore_rollup_new_all {
   hidden: no
-  join: employee_lookup_all {
+  join: employee_fact_all {
     relationship: many_to_one
     type: full_outer
-    sql_on: ${seemore_rollup_new_all.employeeid} = ${employee_lookup_all.employeeid} ;;
+    sql_on: ${seemore_rollup_new_all.employeeid} = ${employee_fact_all.employeeid};;
   }
 }
 explore: brb {
