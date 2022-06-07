@@ -116,7 +116,7 @@ view: employee_fact_all {
   dimension: Tenure_Range {
     type: string
     sql: case when (${tenure_days} <=15) THEN 'a- 1-15 Days'
-          WHEN (${tenure_days} >15 AND ${tenure_days} <=30) THEN 'b- 15-60 Days'
+          WHEN (${tenure_days} >15 AND ${tenure_days} <=30) THEN 'b- 15-30 Days'
           WHEN (${tenure_days} >30 AND ${tenure_days} <=60) THEN 'c- 30-60 Days'
           WHEN (${tenure_days} >60 AND ${tenure_days} <=90) THEN 'd- 60-90 Days'
           WHEN (${tenure_days} >90 AND ${tenure_days} <=120) THEN 'e- 90-120 Days'
