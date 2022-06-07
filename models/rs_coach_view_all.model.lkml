@@ -57,7 +57,7 @@ explore: avail_all {
   join:  employee_fact_all {
     relationship: many_to_one
     type: left_outer
-    sql_on: ${avail_all.employeeid}.employeeid} = ${employee_fact_all.employeeid};;
+    sql_on: ${avail_all.employeeid} = ${employee_fact_all.employeeid};;
   }
 }
 
