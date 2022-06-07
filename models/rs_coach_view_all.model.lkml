@@ -103,6 +103,15 @@ explore: brb {
   }
 }
 
+explore: brb_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${brb_all.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: brb_tda {
   hidden: no
   join:  primarylink {
