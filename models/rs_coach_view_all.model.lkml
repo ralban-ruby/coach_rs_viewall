@@ -16,6 +16,15 @@ explore: acw_call {
   }
 }
 
+explore: acw_call_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${acw_call_all.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: agentactivitylog {
   hidden: no
   join:  primarylink {
