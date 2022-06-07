@@ -258,6 +258,16 @@ explore: attendance_occurrences {
   }
 }
 
+explore: attendance_occurrences_all {
+  label: "Attendance Occurrences_all"
+  join: employee_fact_all {
+    view_label: "Employee Info"
+    relationship: many_to_one
+    type: full_outer
+    sql_on:  ${attendance_occurrences_all.empid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: recognitions_given {
   join: primarylink {
     relationship: one_to_one
