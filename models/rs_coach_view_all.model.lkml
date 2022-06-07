@@ -52,6 +52,15 @@ explore: avail {
   }
 }
 
+explore: avail_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${avail_all.employeeid}.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: seemore_rollup {
     hidden: no
     join: primarylink {
