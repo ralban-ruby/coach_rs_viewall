@@ -1,10 +1,10 @@
-view: rs_recap_longoffer_ana_data {
-  sql_table_name: "RS"."RS_RECAP_LONGOFFER_ANA_DATA"
+view: acw_call_all {
+  sql_table_name: "RS"."ACW_CALL_ALL"
     ;;
 
-  dimension: ana {
+  dimension: acw_second {
     type: number
-    sql: ${TABLE}."ANA" ;;
+    sql: ${TABLE}."ACW_SECOND" ;;
   }
 
   dimension: calls {
@@ -33,19 +33,18 @@ view: rs_recap_longoffer_ana_data {
     sql: ${TABLE}."EMPLOYEEID" ;;
   }
 
-  dimension: longoffer {
-    type: number
-    sql: ${TABLE}."LONGOFFER" ;;
-  }
-
   dimension: receptionist_description {
     type: string
     sql: ${TABLE}."RECEPTIONIST_DESCRIPTION" ;;
   }
 
+  dimension: seconds {
+    type: number
+    sql: ${TABLE}."SECONDS" ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
-    }
-
+  }
 }

@@ -16,6 +16,15 @@ explore: acw_call {
   }
 }
 
+explore: acw_call_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${acw_call_all.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: agentactivitylog {
   hidden: no
   join:  primarylink {
@@ -52,6 +61,15 @@ explore: avail {
   }
 }
 
+explore: avail_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${avail_all.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
+
 explore: seemore_rollup {
     hidden: no
     join: primarylink {
@@ -68,12 +86,29 @@ explore: seemore_rollup_new {
     sql_on: ${seemore_rollup_new.employeeid} = ${primarylink.employeeid} ;;
   }
 }
+explore: seemore_rollup_new_all {
+  hidden: no
+  join: employee_fact_all {
+    relationship: many_to_one
+    type: full_outer
+    sql_on: ${seemore_rollup_new_all.employeeid} = ${employee_fact_all.employeeid};;
+  }
+}
 explore: brb {
   hidden: no
   join:  primarylink {
     relationship: one_to_one
     type: left_outer
     sql_on: ${brb.employeeid} = ${primarylink.employeeid};;
+  }
+}
+
+explore: brb_all {
+  hidden: no
+  join:  employee_fact_all {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${brb_all.employeeid} = ${employee_fact_all.employeeid};;
   }
 }
 
@@ -220,6 +255,25 @@ explore: attendance_occurrences {
     relationship: many_to_one
     type: full_outer
     sql_on:  ${attendance_occurrences.empid} = ${employee_lookup_all.employeeid};;
+  }
+}
+
+explore: fact_adherence_occurrences {
+  label: "Attendance Occurrences Calabrio"
+  join: employee_lookup_all {
+    view_label: "Employee Info"
+    relationship: many_to_one
+    type: full_outer
+    sql_on:  ${fact_adherence_occurrences.employeeid} = ${employee_lookup_all.employeeid};;
+  }
+}
+
+explore: attendance_occurrences_all {
+  label: "Attendance Occurrences_all"
+  join: employee_fact_all {
+    relationship: many_to_one
+    type: full_outer
+    sql_on:  ${attendance_occurrences_all.empid} = ${employee_fact_all.employeeid};;
   }
 }
 
