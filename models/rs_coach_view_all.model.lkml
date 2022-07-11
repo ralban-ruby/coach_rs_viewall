@@ -264,7 +264,7 @@ explore: fact_adherence_occurrences {
     view_label: "Employee Info"
     relationship: many_to_one
     type: full_outer
-    sql_on:  ${fact_adherence_occurrences.employeeid} = ${employee_lookup_all.employeeid};;
+    sql_on:  ${fact_adherence_occurrences.employee_code} = ${employee_lookup_all.employee_code};;
   }
 }
 
