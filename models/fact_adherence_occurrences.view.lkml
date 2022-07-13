@@ -1,7 +1,7 @@
 view: fact_adherence_occurrences {
   sql_table_name: "CALABRIO"."FACT_ADHERENCE_OCCURRENCES"
     ;;
-  drill_fields: [person, sum_hours]
+  drill_fields: [person, count_occurrences]
   dimension: absence {
     type: string
     sql: ${TABLE}."ABSENCE" ;;
@@ -140,7 +140,6 @@ view: fact_adherence_occurrences {
 
   measure: count {
     type: count
-    drill_fields: [date_date,team,person,effective_through_date,count_occurrences,sum_hours]
   }
 
   measure: count_occurrences {
@@ -153,5 +152,6 @@ view: fact_adherence_occurrences {
     type: sum_distinct
     value_format_name: decimal_2
     sql: ${TABLE}."Contract Time"/60 ;;
+    drill_fields: [date_date,team,person,effective_through_date,count_occurrences,sum_hours]
   }
 }
