@@ -139,7 +139,7 @@ view: fact_adherence_occurrences {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [date_date,team,person,effective_through_date,count_occurrences,sum_hours]
   }
 
   measure: count_occurrences {
