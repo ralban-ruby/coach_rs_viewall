@@ -145,6 +145,7 @@ view: fact_adherence_occurrences {
   measure: count_occurrences {
     type: sum_distinct
     sql: ${TABLE}."OCCURRENCE";;
+    drill_fields: [date_date,team,person,effective_through_date,count_occurrences,sum_hours]
   }
 
   measure: sum_hours {
