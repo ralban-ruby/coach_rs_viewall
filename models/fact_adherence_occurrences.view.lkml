@@ -1,7 +1,7 @@
 view: fact_adherence_occurrences {
   sql_table_name: "CALABRIO"."FACT_ADHERENCE_OCCURRENCES"
     ;;
-  drill_fields: [person, count_occurrences]
+  drill_fields: [person, count_occurrences,sum_hours]
   dimension: absence {
     type: string
     sql: ${TABLE}."ABSENCE" ;;
