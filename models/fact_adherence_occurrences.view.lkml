@@ -95,7 +95,7 @@ view: fact_adherence_occurrences {
   dimension: person {
     type: string
     sql: ${TABLE}."PERSON" ;;
-    drill_fields: [date_date,team,person,absence, effective_through_date,occurrence,sum_hours]
+    drill_fields: [date_date,team,person,absence, effective_through_date,sum_hours,occurrence]
   }
 
   dimension: person_id {
@@ -145,13 +145,13 @@ view: fact_adherence_occurrences {
   measure: count_occurrences {
     type: sum_distinct
     sql: ${TABLE}."OCCURRENCE";;
-    drill_fields: [date_date,team,person,absence,effective_through_date,occurrence,sum_hours]
+    drill_fields: [date_date,team,person,absence,effective_through_date,sum_hours,occurrence]
   }
 
   measure: sum_hours {
     type: sum_distinct
     value_format_name: decimal_2
     sql: ${TABLE}."Contract Time"/60 ;;
-    drill_fields: [date_date,team,person,absence, effective_through_date,occurrence,sum_hours]
+    drill_fields: [date_date,team,person,absence, effective_through_date,sum_hours,occurrence]
   }
 }
