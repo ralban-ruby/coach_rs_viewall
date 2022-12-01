@@ -27,6 +27,13 @@ view: rs_recap_longoffer_ana_data {
     sql: ${TABLE}."DATE" ;;
   }
 
+  dimension: ukey {
+    type: string
+    primary_key: yes
+    sql: CONCAT(${employeeid},${date_date}) ;;
+
+  }
+
   dimension: employeeid {
     type: number
     value_format_name: id
