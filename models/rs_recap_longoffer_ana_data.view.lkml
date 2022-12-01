@@ -53,4 +53,27 @@ view: rs_recap_longoffer_ana_data {
     type: count
     drill_fields: []
   }
+
+  measure: sum_longoffer {
+    type: sum
+    sql: ${longoffer} ;;
+  }
+
+  measure: sum_ana {
+    type: sum
+    sql: ${ana} ;;
+  }
+
+  measure: sum_calls {
+    type: sum
+    sql: ${calls} ;;
+  }
+
+  measure: longoffer_rate {
+    type: number
+    value_format: "0.00\%"
+    sql: SUM(${longoffer})/SUM(${calls}) * 100 ;;
+
+  }
+
 }
